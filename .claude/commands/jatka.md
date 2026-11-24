@@ -1,13 +1,16 @@
 ---
 description: Kerro mihin projektissa on jääty ja anna konkreettiset ohjeet, miten jatketaan
+argument-hint: "[oma nimi: Elias, Miska, Veijo tai Taif]"
 ---
 
 Auta käyttäjää jatkamaan projektia siitä, mihin se jäi. Tämä komento on vain lukeva: älä varaa tehtävää, muokkaa tiedostoja äläkä commitoi, ennen kuin käyttäjä vahvistaa.
 
+Käyttäjän antama nimi: `$ARGUMENTS`. Jos tässä on nimi (Elias, Miska, Veijo tai Taif, kirjainkoolla ei väliä), käytä sitä äläkä kysy nimeä uudelleen. Jos nimi on muu kuin nämä neljä, kerro se ja kysy oikea nimi.
+
 ## 1. Selvitä tila
 1. Aja `git pull`, `git log -10 --oneline`, `git branch --show-current`, `git branch -a` ja `gh pr list`. Jos jokin epäonnistuu, kerro se äläkä arvaa.
 2. Lue `CLAUDE.md`, `TASKS.md` ja `PLAN.md`.
-3. Kysy käyttäjän nimi (Elias, Miska, Veijo tai Taif), ellei se ilmene. Git-käyttäjänimi ei kerro sitä.
+3. Nimi: käytä komennon argumenttia, jos se on annettu. Muuten kysy käyttäjän nimi (Elias, Miska, Veijo tai Taif), ellei se ilmene muualta. Git-käyttäjänimi ei kerro sitä. Käytä nimeä `ottaja`-kentässä ja AI-lokissa, ja kerro raportissa, mitkä `työn alla` -tehtävät ovat käyttäjän omia.
 
 ## 2. Kerro mihin on jääty
 Raportoi suomeksi tiiviisti:
