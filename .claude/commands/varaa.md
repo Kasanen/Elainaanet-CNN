@@ -1,9 +1,9 @@
 ---
 description: Varaa tehtävä (esim. /varaa T02) ja luo sille oma haara
-argument-hint: "[tehtävän numero, esim. T02]"
+argument-hint: "[tehtävän numero] [oma nimi], esim. T02 Veijo"
 ---
 
-Varaa tehtävä käyttäjälle ja luo sille haara `CLAUDE.md`:n työnkulun kohdan 4 mukaisesti. Tehtävän numero annetaan argumenttina: `$ARGUMENTS`.
+Varaa tehtävä käyttäjälle ja luo sille haara `CLAUDE.md`:n työnkulun kohdan 4 mukaisesti. Argumentit: `$ARGUMENTS`. Ne ovat tehtävän numero ja valinnaisesti oma nimi (esim. `T02 Veijo`). Sanojen järjestyksellä ei ole väliä: `Txx`-muotoinen sana on tehtävä ja Elias, Miska, Veijo tai Taif (kirjainkoolla ei väliä) on nimi.
 
 Tämä on ainoa tilanne, jossa saa pushata suoraan `mainiin`: pelkkä varaus omana pienenä commitina. Kaikki muu työ tehdään haarassa ja viedään PR:llä.
 
@@ -12,7 +12,7 @@ Tämä on ainoa tilanne, jossa saa pushata suoraan `mainiin`: pelkkä varaus oma
 2. Aja `git switch main` ja `git pull`. Jos pull epäonnistuu, kerro virhe äläkä arvaa.
 3. Lue `TASKS.md`. Jos argumentti puuttuu, ehdota ylintä vapaata tehtävää, jonka `vaatii`-tehtävät ovat kaikki `valmis`, ja kysy vahvistus ennen jatkamista.
 4. Varmista, että tehtävä on olemassa, sen `tila` on `vapaa` ja kaikki sen `vaatii`-tehtävät ovat `valmis`. Jos ei, kerro syy (kuka on ottanut tai mikä vaatimus puuttuu) ja ehdota vaihtoehtoa. Älä muokkaa toisen `työn alla` -tehtävää.
-5. Kysy käyttäjän nimi (Elias, Miska, Veijo tai Taif), ellei se ilmene. Git-käyttäjänimi ei kerro sitä.
+5. Nimi: käytä argumentissa annettua nimeä. Jos sitä ei ole, käytä nimeä, jonka käyttäjä on jo kertonut tässä istunnossa (esim. `/jatka Veijo`). Kysy nimi (Elias, Miska, Veijo tai Taif) vain, jos se ei ilmene kummastakaan. Jos annettu nimi on muu kuin nämä neljä, kysy oikea nimi. Git-käyttäjänimi ei kerro sitä.
 
 ## 2. Varaus mainiin
 1. Muokkaa `TASKS.md`:ssä vain valitun tehtävän riviä: `ottaja: –` -> `ottaja: <Nimi>` ja `tila: vapaa` -> `tila: työn alla`. Älä koske muihin riveihin, numerointiin tai ruutuun `[ ]`.
