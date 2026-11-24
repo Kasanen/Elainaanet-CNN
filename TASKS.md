@@ -22,7 +22,7 @@ Tavoitteet: baseline (A) ≥ 70 %, paras malli ≥ 85 % tarkkuus ja makro-F1 ≥
 
 Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki käyttävät samaa dataa ja koodia.
 
-- [ ] **T01** Luo uusi GitHub-repo (kaikille neljälle kirjoitusoikeus; `main`in suojaus valinnainen ja ilman pakollista hyväksyntää), kansiorakenne, `requirements.txt`, `.gitignore` (`data/`, `models/`, `*.npy`, `.ipynb_checkpoints`, `__pycache__`) ja jaettu Drive-kansio. Ensimmäisenä commitina `CLAUDE.md`, `PLAN.md`, `TASKS.md`, `README.md` ja `temp/`-ohjeet
+- [ ] **T01** Luo uusi GitHub-repo (kaikille neljälle kirjoitusoikeus; `main`in suojaus valinnainen ja ilman pakollista hyväksyntää), kansiorakenne, `requirements.txt`, `.gitignore` (`data/`, `models/`, `*.npy`, `.ipynb_checkpoints`, `__pycache__`) ja jaettu Drive-kansio. Ensimmäisenä commitina `CLAUDE.md`, `PLAN.md`, `TASKS.md`, `README.md` ja `private/`-ohjeet
   - vaatii: – · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [ ] **T02** Lataa ESC-50, suodata eläinluokat (`target` < 10), tarkista 400 leikettä
   - vaatii: T01 · takaraja: to 26.11. · ottaja: – · tila: vapaa
@@ -95,3 +95,4 @@ Kurssi vaatii tarkan kirjauksen siitä, miten ja missä tekoälyä on käytetty.
 | --- | --- | --- | --- | --- | --- |
 | 24.11.2026 | Veijo | Dokumentaation tarkistus | Claude Code | Vertaa CLAUDE.md, PLAN.md, TASKS.md ja INSTRUCTIONS-short.md tehtävänantoon ja korjaa 7 löydettyä puutetta | Käytettiin tarkistuksen tuloksia. Lisättiin validointifoldi, C1-poikkeus, T25, T17/T20/T21 muutokset ja raportin osiot. Ryhmän pitää tarkistaa muutokset |
 | 24.11.2026 | Veijo | Yhteistyöpohja | Claude Code | Arvioi, toimiiko dokumentaatio neljän hengen työssä ja arvosanatavoitteessa 5 | Käytettiin ehdotuksia: git-työnkulku (varaus, haara, PR), istuntosäännöt, notebook-säännöt, arvosana 5 -tarkistuslista `PLAN.md`:ssä, README. Ryhmän pitää tarkistaa |
+| 24.11.2026 | Veijo | Nykytilan jakaminen | Claude Code | Tee projektista sellainen, että muut jäsenet voivat jatkaa siitä mihin jäätiin | Siirrettiin tehtävänanto-tiedostot `temp/` -> `private/`, päivitettiin T01:n maininta ja avattiin PR. Tehtäviin ei koskettu |
