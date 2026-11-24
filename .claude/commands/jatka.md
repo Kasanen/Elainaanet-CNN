@@ -14,6 +14,7 @@ Raportoi suomeksi tiiviisti:
 - **Edistyminen:** montako tehtävää `[x]` kaikista, nykyinen vaihe ja sen takaraja suhteessa tämän päivän päivämäärään.
 - **Viimeisin työ:** mitä viimeiset commitit ja yhdistetyt PR:t tekivät, ja mikä tehtävä niistä valmistui.
 - **Työn alla:** `työn alla` -tehtävät ja ottajat. Jos käyttäjällä on oma keskeneräinen tehtävä, kerro sen haara ja avoin PR, ja ehdota jatkamaan siitä.
+- **Muistutus PR:stä:** jos käyttäjän haarassa on pushaamattomia tai commitoimattomia muutoksia, haara on pushattu mutta PR puuttuu (`gh pr list --head <haara>`), tai käyttäjän PR on auki yhdistämättä, muistuta siitä selvästi ja kerro seuraava askel: pushaa haara, avaa PR (`gh pr create --base main`) ja yhdistä se itse. Älä avaa tai yhdistä PR:ää ilman käyttäjän pyyntöä. Muistuta myös, että työ ei ole `main`issa ennen kuin PR on yhdistetty, joten muut eivät näe sitä.
 - **Myöhässä tai jumissa:** `työn alla` -tehtävät, joiden takaraja on ohi, ja avoimet PR:t, jotka odottavat yhdistämistä.
 - **Tarkistus:** aja `python scripts/check_project.py`, jos tiedosto on olemassa. Jos sitä ei ole (tehtävä T25), sano se äläkä väitä tarkistusta tehdyksi.
 
@@ -27,6 +28,7 @@ Kirjoita valitulle tehtävälle valmis lista, jossa komennot on täytetty tehtä
 3. Työ: kerro, mitä tehtävä vaatii ja missä tiedostoissa se tehdään (`src/`, notebookit, `results/`).
 4. Muistuta säännöt, jotka koskevat tätä tehtävää (ei datavuotoa, siemen 42, samat foldit, tulokset `results/{malli}_fold{k}.json`).
 5. Valmis: PR mainiin, jossa `tila: valmis`, `[x]` ja AI-lokirivi. Kerro, tarvitseeko PR katselmoinnin (`src/data.py`, `src/augment.py`).
+6. Muistuta lopuksi: tehtävä ei ole valmis ennen kuin PR on yhdistetty `mainiin`. Älä unohda PR:ää työn päätteeksi.
 
 ## 5. Lopuksi
 Älä keksi tuloksia, lukuja tai lähteitä, äläkä väitä tavoitteen täyttyneen ilman skriptiä ja tulostiedostoja. Kysy, aloitetaanko ehdotettu tehtävä, ja noudata vasta vastauksen jälkeen varausmenettelyä (`CLAUDE.md` kohta 4).
