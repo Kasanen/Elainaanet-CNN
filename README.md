@@ -12,4 +12,28 @@ Tavoitteet ovat `PLAN.md`:ssä ja tehtävät `TASKS.md`:ssä.
 4. Kun työ on valmis, aja `/valmis`. Se merkitsee tehtävän valmiiksi `TASKS.md`:ään (`tila: valmis`, `[x]`), lisää rivin omaan AI-lokiisi (`logs/<nimi>.md`) ja avaa pull requestin. Yhdistä PR itse. Pyydä toista jäsentä katselmoimaan `src/data.py`- ja `src/augment.py`-muutokset.
 5. Logiikka on `src/`:ssä. Notebookeihin tulee vain ajot ja kuvat. Dataa, malleja ja `.npy`-tiedostoja ei commitoida, vaan ne jaetaan Drivessa.
 
+## Kansiorakenne
+
+| Kansio | Sisältö | Gitissä |
+| --- | --- | --- |
+| `src/` | Jaetut moduulit: `data.py`, `augment.py`, `models.py`, `train.py` | kyllä |
+| `notebooks/` | Ajot, taulukot ja kuvat (logiikka `src/`:ssä) | kyllä |
+| `results/` | `{malli}_fold{k}.json` (`PLAN.md`) | kyllä |
+| `scripts/` | Apuskriptit, esim. `check_project.py` (T25) | kyllä |
+| `logs/` | Jokaisen oma AI-loki | kyllä |
+| `data/` | ESC-50 ja `.npy`-välimuisti | ei, Drive |
+| `models/` | `{malli}_fold{k}.keras` | ei, Drive |
+
+## Asennus
+
+```
+pip install -r requirements.txt
+```
+
+Colabissa TensorFlow on valmiina. Asenna puuttuvat paketit samalla komennolla.
+
+## Jaettu Drive
+
+Data (`data/`) ja koulutetut mallit (`models/`) jaetaan Drive-kansiossa: **linkki lisätään tähän**.
+
 Ilman Claudea: `git pull`, lue `TASKS.md`, varaa tehtävä käsin (`ottaja` ja `tila: työn alla`, commit ja push mainiin) ja tee haara `T07-malli-a`.

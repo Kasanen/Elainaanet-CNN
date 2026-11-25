@@ -1,0 +1,17 @@
+# Keras 3 TensorFlow-backendillä (TF >= 2.16 tuo Keras 3:n oletuksena)
+tensorflow>=2.16
+keras>=3.0
+tensorflow-hub        # YAMNet (hub.load, ei hub.KerasLayer)
+keras-tuner           # T11
+
+# Ääni ja data
+librosa
+soundfile
+numpy
+pandas
+scikit-learn          # makro-F1, confusion matrix
+
+# Kuvat, notebookit ja demo
+matplotlib
+jupyter
+gradio                # T20
