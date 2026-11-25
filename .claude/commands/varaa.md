@@ -25,6 +25,6 @@ Tämä on ainoa tilanne, jossa saa pushata suoraan `mainiin`: pelkkä varaus oma
 2. Aja `git switch -c <haaran-nimi>` ja `git push -u origin <haaran-nimi>`.
 
 ## 4. Raportoi ja ohjaa eteenpäin
-Kerro lyhyesti suomeksi: mikä tehtävä varattiin, kenelle, mikä haara luotiin, mitä tehtävä vaatii ja mitä tiedostoja se koskee. Muistuta säännöt: ei datavuotoa, siemen 42, samat foldit, logiikka `src/`:ssä. Muistuta lopuksi, että työ päättyy PR:ään (`gh pr create --base main`), jossa `tila: valmis`, `[x]` ja AI-lokirivi, ja että tehtävä ei ole valmis ennen kuin PR on yhdistetty. Kirjaa tekoälyn käyttö AI-lokiin heti.
+Kerro lyhyesti suomeksi: mikä tehtävä varattiin, kenelle, mikä haara luotiin, mitä tehtävä vaatii ja mitä tiedostoja se koskee. Muistuta säännöt: ei datavuotoa, siemen 42, samat foldit, logiikka `src/`:ssä. Muistuta lopuksi, että työ päättyy PR:ään (`gh pr create --base main`), jossa `tila: valmis`, `[x]` ja rivi omaan AI-lokiin (`logs/<nimi>.md`), ja että tehtävä ei ole valmis ennen kuin PR on yhdistetty. Kerro, että `/valmis` tekee nämä ja avaa PR:n. Kirjaa tekoälyn käyttö omaan lokiin heti.
 
 Älä keksi tuloksia tai lukuja. Älä aloita tehtävän varsinaista työtä ennen kuin käyttäjä pyytää.

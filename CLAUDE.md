@@ -28,7 +28,7 @@ Ryhmässä on 4 jäsentä, ja jokainen käyttää omaa Claude-istuntoaan. Claude
 
 **Istunnon alussa**
 1. Aja `git pull` ja `git log -10 --oneline`, lue `TASKS.md` ja `PLAN.md`.
-2. Kysy käyttäjän nimi (Elias, Miska, Veijo tai Taif), jos se ei ilmene. Git-käyttäjänimi ei kerro sitä. Käytä nimeä `ottaja`-kentässä ja AI-lokissa.
+2. Kysy käyttäjän nimi (Elias, Miska, Veijo tai Taif), jos se ei ilmene. Git-käyttäjänimi ei kerro sitä. Käytä nimeä `ottaja`-kentässä ja AI-lokissa (`logs/<nimi>.md`).
 3. Aja `python scripts/check_project.py` ja kerro lyhyesti tilanne. Skripti syntyy vasta tehtävässä T25. Kun sitä ei vielä ole, sano se äläkä väitä tarkistusta tehdyksi.
 
 **Tehtävän aikana**
@@ -37,8 +37,8 @@ Ryhmässä on 4 jäsentä, ja jokainen käyttää omaa Claude-istuntoaan. Claude
 6. Älä muokkaa toisen `työn alla` -tehtävää äläkä muuta tehtävien numeroita.
 
 **Kun tehtävä on valmis**
-7. Samassa PR:ssä: `tila: valmis`, `[x]`, AI-lokirivi ja tarvittaessa `PLAN.md`:n muutosloki. Aja tarkistusskripti uudelleen.
-8. Kirjaa tekoälyn käyttö `TASKS.md`:n AI-lokiin heti, älä vasta lopuksi.
+7. Samassa PR:ssä: `tila: valmis`, `[x]`, rivi omaan AI-lokiin (`logs/<nimi>.md`) ja tarvittaessa `PLAN.md`:n muutosloki. Aja tarkistusskripti uudelleen. Komento `/valmis` tekee tämän.
+8. Kirjaa tekoälyn käyttö käyttäjän omaan lokiin `logs/<nimi>.md` heti, älä vasta lopuksi. Älä kirjaa toisen jäsenen lokiin.
 9. Lopuksi tarkista, ettei mikään jäänyt päivittämättä: tehtävän tila, AI-loki ja muutosloki.
 
 **Suunnitelman muutokset**
@@ -62,7 +62,7 @@ Ryhmässä on 4 jäsentä, ja jokainen käyttää omaa Claude-istuntoaan. Claude
 Tekoälyn käyttö on sallittu myös dokumentaatiossa ja raportissa, mutta:
 - ryhmän jäsenen pitää ymmärtää ja pystyä selittämään jokainen käytetty koodirivi, joten selitä koodi riveittäin pyydettäessä ja ennen kuin ehdotat isoa muutosta,
 - sisällön, tulosten ja johtopäätösten on oltava oikeita ja ryhmän todentamia,
-- tekoälyn käyttö kirjataan tarkasti AI-lokiin ja raportin liitteeseen.
+- tekoälyn käyttö kirjataan tarkasti AI-lokiin (`logs/<nimi>.md`) ja raportin liitteeseen.
 
 ## Kommunikointi
 

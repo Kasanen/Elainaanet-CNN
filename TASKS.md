@@ -10,7 +10,7 @@ Ryhmä 2: Elias, Miska, Veijo, Taif
 3. Kun tehtävä on valmis: tee pull request ja yhdistä se itse (toisen hyväksyntää ei vaadita). Muutokset tiedostoihin `src/data.py` ja `src/augment.py` katselmoi toinen jäsen, koska ne vaikuttavat kaikkiin malleihin. PR-kuvaukseen kirjoitetaan, kuka osaa selittää koodin. Samassa PR:ssä vaihdetaan `tila: valmis` ja ruutu `[ ]` muotoon `[x]`.
 4. Älä muokkaa muiden `työn alla` -tehtäviä äläkä muuta tehtävien numeroita (`T01`...), koska `vaatii`-viittaukset käyttävät niitä.
 5. Jos tehtävä paljastaa uuden työn, lisää rivi osion loppuun uudella numerolla ja `tila: vapaa`.
-6. Kirjaa tekoälyn käyttö alla olevaan AI-lokiin heti, kun käytät sitä.
+6. Kirjaa tekoälyn käyttö omaan lokiisi (`logs/<nimi>.md`, ks. alla AI-loki) heti, kun käytät sitä.
 
 Claudelle: pysy tämän projektin suunnitelmassa (ESC-50:n 10 eläinluokkaa, Keras 3 + TensorFlow, mallit A, B, C1, C2). Älä ehdota uusia datasettejä tai kirjastoja ilman, että kysyt ensin. Tarkista aina: ei datavuotoa (normalisointi ja augmentaatio vain opetusdatalle, testifoldiin ei kosketa viritysvaiheessa), siemen 42, samat foldit kaikilla malleilla.
 
@@ -89,12 +89,11 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
 
 ## AI-loki
 
-Kurssi vaatii tarkan kirjauksen siitä, miten ja missä tekoälyä on käytetty. Lisää rivi jokaisesta käytöstä.
+Kurssi vaatii tarkan kirjauksen siitä, miten ja missä tekoälyä on käytetty. Jokaisella jäsenellä on oma lokitiedosto, jotta kaksi PR:ää ei muokkaa samaa taulukkoa ja aiheuta konflikteja:
 
-| Päivä | Kuka | Tehtävä | Työkalu | Mitä pyydettiin | Mitä käytettiin ja muutettiin |
-| --- | --- | --- | --- | --- | --- |
-| 24.11.2026 | Veijo | Dokumentaation tarkistus | Claude Code | Vertaa CLAUDE.md, PLAN.md, TASKS.md ja INSTRUCTIONS-short.md tehtävänantoon ja korjaa 7 löydettyä puutetta | Käytettiin tarkistuksen tuloksia. Lisättiin validointifoldi, C1-poikkeus, T25, T17/T20/T21 muutokset ja raportin osiot. Ryhmän pitää tarkistaa muutokset |
-| 24.11.2026 | Veijo | Yhteistyöpohja | Claude Code | Arvioi, toimiiko dokumentaatio neljän hengen työssä ja arvosanatavoitteessa 5 | Käytettiin ehdotuksia: git-työnkulku (varaus, haara, PR), istuntosäännöt, notebook-säännöt, arvosana 5 -tarkistuslista `PLAN.md`:ssä, README. Ryhmän pitää tarkistaa |
-| 24.11.2026 | Veijo | Nykytilan jakaminen | Claude Code | Tee projektista sellainen, että muut jäsenet voivat jatkaa siitä mihin jäätiin | Siirrettiin tehtävänanto-tiedostot `temp/` -> `private/`, päivitettiin T01:n maininta ja avattiin PR. Tehtäviin ei koskettu |
-| 25.11.2026 | Veijo | `/jatka`-komento | Claude Code | Tee komento, jolla Claude tarkistaa projektin ja varmistaa, missä tehtävässä edetään | Käytettiin `.claude/commands/jatka.md` sellaisenaan ja lisättiin maininta README:hen. Ryhmän pitää kokeilla komentoa |
-| 25.11.2026 | Veijo | `/varaa`-komento | Claude Code | Automatisoi tehtävän varaus ja haaran luonti komennolla | Käytettiin `.claude/commands/varaa.md` ja lisättiin maininta README:hen. Ryhmän pitää kokeilla komentoa ennen kuin siihen luotetaan |
+- [`logs/elias.md`](logs/elias.md)
+- [`logs/miska.md`](logs/miska.md)
+- [`logs/veijo.md`](logs/veijo.md)
+- [`logs/taif.md`](logs/taif.md)
+
+Lisää rivi omaan tiedostoosi jokaisesta käytöstä heti. Raportin liite (T22) kootaan näistä neljästä tiedostosta. Muokkaa vain omaa lokiasi.

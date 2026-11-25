@@ -30,7 +30,7 @@ Kirjoita valitulle tehtävälle valmis lista, jossa komennot on täytetty tehtä
 2. Haara: `git switch -c T02-data`.
 3. Työ: kerro, mitä tehtävä vaatii ja missä tiedostoissa se tehdään (`src/`, notebookit, `results/`).
 4. Muistuta säännöt, jotka koskevat tätä tehtävää (ei datavuotoa, siemen 42, samat foldit, tulokset `results/{malli}_fold{k}.json`).
-5. Valmis: PR mainiin, jossa `tila: valmis`, `[x]` ja AI-lokirivi. Kerro, tarvitseeko PR katselmoinnin (`src/data.py`, `src/augment.py`).
+5. Valmis: aja `/valmis`. Se tekee PR:n mainiin, jossa `tila: valmis`, `[x]` ja rivi omaan AI-lokiin (`logs/<nimi>.md`). Kerro, tarvitseeko PR katselmoinnin (`src/data.py`, `src/augment.py`).
 6. Muistuta lopuksi: tehtävä ei ole valmis ennen kuin PR on yhdistetty `mainiin`. Älä unohda PR:ää työn päätteeksi.
 
 ## 5. Lopuksi
