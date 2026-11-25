@@ -23,7 +23,7 @@ Tavoitteet: baseline (A) ≥ 70 %, paras malli ≥ 85 % tarkkuus ja makro-F1 ≥
 Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki käyttävät samaa dataa ja koodia.
 
 - [ ] **T01** Luo uusi GitHub-repo (kaikille neljälle kirjoitusoikeus; `main`in suojaus valinnainen ja ilman pakollista hyväksyntää), kansiorakenne, `requirements.txt`, `.gitignore` (`data/`, `models/`, `*.npy`, `.ipynb_checkpoints`, `__pycache__`) ja jaettu Drive-kansio. Ensimmäisenä commitina `CLAUDE.md`, `PLAN.md`, `TASKS.md`, `README.md` ja `private/`-ohjeet
-  - vaatii: – · takaraja: to 26.11. · ottaja: – · tila: vapaa
+  - vaatii: – · takaraja: to 26.11. · ottaja: Elias · tila: työn alla
 - [ ] **T02** Lataa ESC-50, suodata eläinluokat (`target` < 10), tarkista 400 leikettä
   - vaatii: T01 · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [ ] **T03** Fold-jako `split()` (testifoldi + validointifoldi + opetusfoldit, ks. `PLAN.md`) ja EDA (luokkajakauma, esimerkkispektrogrammit)
