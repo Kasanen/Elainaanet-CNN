@@ -26,12 +26,11 @@ Valitse ylin rivi, jonka `tila` on `vapaa` ja jonka `vaatii`-tehtävät ovat kai
 
 ## 4. Anna ohjeet, miten jatketaan
 Kirjoita valitulle tehtävälle valmis lista, jossa komennot on täytetty tehtävän numerolla ja lyhyellä nimellä (esim. `T02-data`):
-1. Varaus: kirjoita nimesi `ottaja`-kenttään ja vaihda `tila: työn alla`. Commitoi ja pushaa tämä heti `mainiin` omana pienenä commitina.
-2. Haara: `git switch -c T02-data`.
-3. Työ: kerro, mitä tehtävä vaatii ja missä tiedostoissa se tehdään (`src/`, notebookit, `results/`).
-4. Muistuta säännöt, jotka koskevat tätä tehtävää (ei datavuotoa, siemen 42, samat foldit, tulokset `results/{malli}_fold{k}.json`).
-5. Valmis: aja `/valmis`. Se tekee PR:n mainiin, jossa `tila: valmis`, `[x]` ja rivi omaan AI-lokiin (`logs/<nimi>.md`). Kerro, tarvitseeko PR katselmoinnin (`src/data.py`, `src/augment.py`).
-6. Muistuta lopuksi: tehtävä ei ole valmis ennen kuin PR on yhdistetty `mainiin`. Älä unohda PR:ää työn päätteeksi.
+1. Varaus ja haara: kehota käyttäjää antamaan komento `/varaa T02 <Nimi>` (täytä tehtävän numero ja käyttäjän nimi). Se kirjoittaa `ottaja`-kenttään nimen, vaihtaa `tila: työn alla`, pushaa varauksen `mainiin` omana pienenä commitina ja luo haaran (esim. `T02-data`). Älä neuvo tekemään varausta käsin.
+2. Työ: kerro, mitä tehtävä vaatii ja missä tiedostoissa se tehdään (`src/`, notebookit, `results/`).
+3. Muistuta säännöt, jotka koskevat tätä tehtävää (ei datavuotoa, siemen 42, samat foldit, tulokset `results/{malli}_fold{k}.json`).
+4. Valmis: aja `/valmis`. Se tekee PR:n mainiin, jossa `tila: valmis`, `[x]` ja rivi omaan AI-lokiin (`logs/<nimi>.md`). Kerro, tarvitseeko PR katselmoinnin (`src/data.py`, `src/augment.py`).
+5. Muistuta lopuksi: tehtävä ei ole valmis ennen kuin PR on yhdistetty `mainiin`. Älä unohda PR:ää työn päätteeksi.
 
 ## 5. Lopuksi
-Älä keksi tuloksia, lukuja tai lähteitä, äläkä väitä tavoitteen täyttyneen ilman skriptiä ja tulostiedostoja. Kysy, aloitetaanko ehdotettu tehtävä, ja noudata vasta vastauksen jälkeen varausmenettelyä (`CLAUDE.md` kohta 4).
+Älä keksi tuloksia, lukuja tai lähteitä, äläkä väitä tavoitteen täyttyneen ilman skriptiä ja tulostiedostoja. Kysy, aloitetaanko ehdotettu tehtävä, ja muistuta, että varaus tehdään komennolla `/varaa <tehtävä> <Nimi>` (`CLAUDE.md` kohta 4). Älä varaa tehtävää tämän komennon sisällä.
