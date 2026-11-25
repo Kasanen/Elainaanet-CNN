@@ -34,7 +34,7 @@ Colabissa TensorFlow on valmiina. Asenna puuttuvat paketit samalla komennolla.
 
 ## Jaettu Drive
 
-Data (`data/`) ja koulutetut mallit (`models/`) jaetaan Drive-kansiossa: [Elainaanet-CNN (Drive)](https://drive.google.com/drive/folders/1mgNwojdqJFhWOmCDYD6WqlEpVDKGTMBK?usp=share_link). Pääsy vain ryhmän jäsenille.
+Data (`data/`) ja koulutetut mallit (`models/`) jaetaan Drive-kansiossa: [Elainaanet-CNN (Drive)](https://drive.google.com/drive/folders/1mgNwojdqJFhWOmCDYD6WqlEpVDKGTMBK?usp=share_link). Kansio on jaettu linkillä: kuka tahansa, jolla on linkki, voi avata sen.
 
 Colabissa:
 
