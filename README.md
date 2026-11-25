@@ -34,6 +34,16 @@ Colabissa TensorFlow on valmiina. Asenna puuttuvat paketit samalla komennolla.
 
 ## Jaettu Drive
 
-Data (`data/`) ja koulutetut mallit (`models/`) jaetaan Drive-kansiossa: **linkki lisätään tähän**.
+Data (`data/`) ja koulutetut mallit (`models/`) jaetaan Drive-kansiossa: [Elainaanet-CNN (Drive)](https://drive.google.com/drive/folders/1mgNwojdqJFhWOmCDYD6WqlEpVDKGTMBK?usp=share_link). Pääsy vain ryhmän jäsenille.
+
+Colabissa:
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+DATA_DIR = '/content/drive/MyDrive/Elainaanet-CNN/data'
+```
+
+Jos kansio on jaettu sinulle, lisää siitä pikakuvake Omaan Driveen (Jaettu kanssani → oikea klikkaus → Järjestä → Lisää pikakuvake), jotta polku on kaikilla sama.
 
 Ilman Claudea: `git pull`, lue `TASKS.md`, varaa tehtävä käsin (`ottaja` ja `tila: työn alla`, commit ja push mainiin) ja tee haara `T07-malli-a`.
