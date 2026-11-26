@@ -25,7 +25,7 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
 - [ ] **T01** Luo uusi GitHub-repo (kaikille neljälle kirjoitusoikeus; `main`in suojaus valinnainen ja ilman pakollista hyväksyntää), kansiorakenne, `requirements.txt`, `.gitignore` (`data/`, `models/`, `*.npy`, `.ipynb_checkpoints`, `__pycache__`) ja jaettu Drive-kansio. Ensimmäisenä commitina `CLAUDE.md`, `PLAN.md`, `TASKS.md`, `README.md` ja `private/`-ohjeet
   - vaatii: – · takaraja: to 26.11. · ottaja: Elias · tila: työn alla
 - [ ] **T02** Lataa ESC-50, suodata eläinluokat (`target` < 10), tarkista 400 leikettä
-  - vaatii: T01 · takaraja: to 26.11. · ottaja: – · tila: vapaa
+  - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: työn alla
 - [ ] **T03** Fold-jako `split()` (testifoldi + validointifoldi + opetusfoldit, ks. `PLAN.md`) ja EDA (luokkajakauma, esimerkkispektrogrammit)
   - vaatii: T02 · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [ ] **T04** Esikäsittely: `load_wave`, `log_mel`, `.npy`-välimuisti, normalisointi opetusdatan tilastoilla
