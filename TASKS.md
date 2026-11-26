@@ -32,6 +32,10 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
   - vaatii: T02 · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [ ] **T05** `PyDataset` ja augmentaatiot (aikasiirto, kohina, SpecAugment, mixup)
   - vaatii: T04 · takaraja: to 26.11. · ottaja: – · tila: vapaa
+- [ ] **T06** Yhteinen koulutusfunktio (callbackit) ja tulosten tallennus `results/`-kansioon
+  - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: työn alla
+- [x] **T25** Luo `scripts/check_project.py` (tarkistaa tulostiedostot, tavoitteet ja palautettavat)
+  - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: valmis
 - [x] **T06** Yhteinen koulutusfunktio (callbackit) ja tulosten tallennus `results/`-kansioon
   - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: valmis
 - [ ] **T25** Luo `scripts/check_project.py` (tarkistaa tulostiedostot, tavoitteet ja palautettavat)
