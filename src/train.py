@@ -35,48 +35,62 @@ def run_name(name, fold, stage=None):
 
 
 def make_callbacks(name, fold, stage=None, models_dir="models",
-                   history_dir="results/history", patience=15, lr_patience=5):
+                   history_dir="results/history", patience=15, lr_patience=5,
+                   save_files=True):
     """Palauta yhteiset callbackit. Kaikki seuraavat validointihäviötä (`val_loss`).
 
     - EarlyStopping lopettaa, kun `val_loss` ei ole parantunut `patience` epookkiin,
       ja palauttaa parhaan epookin painot.
-    - ModelCheckpoint tallentaa parhaan mallin: `models/{name}_fold{k}.keras`.
     - ReduceLROnPlateau puolittaa oppimisnopeuden, kun `val_loss` ei parane
       `lr_patience` epookkiin.
+    - ModelCheckpoint tallentaa parhaan mallin: `models/{name}_fold{k}.keras`.
+      Nimessä ei ole `stage`-osaa, joten C2:n hienosäätövaihe ylikirjoittaa
+      pää-vaiheen tiedoston ja lopullinen malli on vakionimellä.
     - CSVLogger kirjaa jokaisen epookin häviöt ja tarkkuudet:
-      `results/history/{name}_fold{k}.csv` (oppimiskuvaajat, T18).
+      `results/history/{name}_fold{k}[_{stage}].csv` (oppimiskuvaajat, T18).
+
+    `save_files=False` jättää ModelCheckpointin ja CSVLoggerin pois. KerasTuner (T11)
+    käyttää tätä, koska `tuner.search` kutsuu `fit`-funktiota itse jokaisella
+    kokeilulla ja tiedostot muuten ylikirjoittuisivat.
     """
-    base = run_name(name, fold, stage)
-    Path(models_dir).mkdir(parents=True, exist_ok=True)
-    Path(history_dir).mkdir(parents=True, exist_ok=True)
-    return [
+    callbacks = [
         keras.callbacks.EarlyStopping(
             monitor="val_loss", patience=patience, restore_best_weights=True, verbose=1),
-        keras.callbacks.ModelCheckpoint(
-            str(Path(models_dir) / f"{base}.keras"), monitor="val_loss", save_best_only=True),
         keras.callbacks.ReduceLROnPlateau(
             monitor="val_loss", factor=0.5, patience=lr_patience, min_lr=1e-6, verbose=1),
-        keras.callbacks.CSVLogger(str(Path(history_dir) / f"{base}.csv")),
     ]
+    if save_files:
+        Path(models_dir).mkdir(parents=True, exist_ok=True)
+        Path(history_dir).mkdir(parents=True, exist_ok=True)
+        callbacks += [
+            keras.callbacks.ModelCheckpoint(
+                str(Path(models_dir) / f"{run_name(name, fold)}.keras"),
+                monitor="val_loss", save_best_only=True),
+            keras.callbacks.CSVLogger(
+                str(Path(history_dir) / f"{run_name(name, fold, stage)}.csv")),
+        ]
+    return callbacks
 
 
 def train_model(model, train_data, val_data, name, fold, epochs=100, batch_size=None,
                 stage=None, extra_callbacks=None, **callback_kwargs):
     """Kouluta valmiiksi käännetty malli. Palauttaa (history, train_seconds).
 
-    `train_data` ja `val_data` ovat joko `(x, y)`-pareja tai `keras.utils.PyDataset`-
-    olioita. Testidataa tälle funktiolle ei anneta. `stage` erottaa saman ajon
-    vaiheet (C2: "head" ja "ft"), jotta tiedostot eivät kirjoitu toistensa päälle.
+    `train_data` ja `val_data` ovat joko `(x, y)`-pareja (monikko tai lista) tai
+    `keras.utils.PyDataset`-olioita. Testidataa tälle funktiolle ei anneta. `stage`
+    erottaa saman ajon vaiheiden CSV-lokit (C2: "head" ja "ft").
     `callback_kwargs` (esim. `patience=10`) välitetään `make_callbacks`-funktiolle.
     """
     callbacks = make_callbacks(name, fold, stage=stage, **callback_kwargs)
     callbacks += list(extra_callbacks or [])
 
-    if isinstance(train_data, tuple):
+    if isinstance(train_data, (tuple, list)):
         x, y = train_data
         fit_args = dict(x=x, y=y, batch_size=batch_size)
     else:
         fit_args = dict(x=train_data)   # PyDataset hoitaa erät itse
+    if isinstance(val_data, list):
+        val_data = tuple(val_data)      # fit odottaa validointiparin monikkona
 
     start = time.perf_counter()
     history = model.fit(**fit_args, validation_data=val_data, epochs=epochs,
