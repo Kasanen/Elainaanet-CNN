@@ -32,6 +32,19 @@ pip install -r requirements.txt
 
 Colabissa TensorFlow on valmiina. Asenna puuttuvat paketit samalla komennolla.
 
+## Data (ESC-50)
+
+Käytämme [ESC-50](https://github.com/karolpiczak/ESC-50)-datasetin (Piczak 2015, CC BY-NC 3.0) eläinluokkia `target` 0–9: koira, kukko, sika, lehmä, sammakko, kissa, kana, hyönteiset, lammas ja varis. Niissä on 400 leikettä (40 per luokka, 5 s, 44,1 kHz, mono) ja viralliset 5 foldia (8 leikettä per luokka per foldi).
+
+Lataus, suodatus ja tarkistus yhdellä komennolla repon juuresta:
+
+```
+python scripts/download_esc50.py                    # -> data/ESC-50
+python scripts/download_esc50.py --data-dir /content/drive/MyDrive/Elainaanet-CNN/data   # Colab + Drive
+```
+
+Skripti lataa GitHubin zipin, purkaa koko metadatan (`meta/esc50.csv`) ja vain eläinluokkien 400 wav-tiedostoa (noin 170 Mt), poistaa zipin ja tarkistaa määrät, foldit ja äänitiedostojen muodon (`check_dataset`). Jos data on jo paikallaan, mitään ei ladata uudelleen. Koodissa data luetaan `src.data.load_metadata(data_dir)`-funktiolla.
+
 ## Jaettu Drive
 
 Data (`data/`) ja koulutetut mallit (`models/`) jaetaan Drive-kansiossa: [Elainaanet-CNN (Drive)](https://drive.google.com/drive/folders/1mgNwojdqJFhWOmCDYD6WqlEpVDKGTMBK?usp=share_link). Kansio on jaettu linkillä: kuka tahansa, jolla on linkki, voi avata sen.
