@@ -55,7 +55,7 @@ Ablaatioajot tallennetaan samalla tavalla nimellä `results/ablation_{asetus}_fo
 - [ ] Notebookit on tallennettu `.ipynb`- ja `.html`-muodossa
 - [ ] Koulutetut mallit tai uudelleenkoulutusohje ovat mukana (`README.md`)
 - [ ] Linkki ESC-50-datasettiin ja lataus-/suodatusohje ovat mukana
-- [ ] Opettaja on hyväksynyt projektisuunnitelman (tehtävänanto: viikko 5), tila kirjattu muutoslokiin
+- [x] Opettaja on hyväksynyt projektisuunnitelman (tehtävänanto: viikko 5), tila kirjattu muutoslokiin
 - [ ] Raportti (3–5 s) sisältää kaikki vaaditut osiot (myös motivaatio, jatkokehitysideat, epäonnistumiset ja opitut asiat sekä työnjako)
 - [ ] Tekoälyn käyttö on dokumentoitu (AI-loki ja raportin liite)
 - [ ] Esitys (10–15 min) on harjoiteltu ja jokainen jäsen puhuu
@@ -111,3 +111,4 @@ Kirjaa tähän kaikki suunnitelmaan tehdyt muutokset (päivä, mitä muuttui, mi
 | 24.11.2026 | Lisätty valmiin määritelmään suunnitelman hyväksyntä ja raportin lisäosiot | Tehtävänanto: hyväksyntä viikolla 5, raportin vaaditut osiot | Ryhmä (pyysi Veijo), toteutti Claude |
 | 24.11.2026 | Uusi repo, haara per tehtävä ja PR toisen jäsenen katselmoinnilla; arvosana 5 -tarkistuslista | Neljän hengen yhteistyö ilman konflikteja ja arviointikohtien seuranta | Veijo valitsi Clauden ehdotuksista. Ryhmän pitää vahvistaa |
 | 24.11.2026 | Pakollinen katselmointi poistettu. PR:n tekijä yhdistää itse, ja vain `src/data.py` ja `src/augment.py` katselmoidaan | Liian paljon kontrollia ja liian vähän vapautta jäsenille, kun aikataulu on tiukka | Veijo ehdotti. Ryhmän pitää vahvistaa |
+| 23.11.2026 | Opettaja hyväksyi projektisuunnitelman suullisesti. Veijo kysyi, ja opettaja sanoi, ettei tarvita suurempaa selitystä tai hyväksyntää | Tehtävänanto vaatii hyväksynnän viikolla 5. Kirjallista vahvistusta ei ole | Veijo (kysyi opettajalta). Ryhmän pitää vahvistaa |
