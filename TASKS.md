@@ -34,8 +34,8 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
   - vaatii: T04 · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [ ] **T06** Yhteinen koulutusfunktio (callbackit) ja tulosten tallennus `results/`-kansioon
   - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: työn alla
-- [ ] **T25** Luo `scripts/check_project.py` (tarkistaa tulostiedostot, tavoitteet ja palautettavat)
-  - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: työn alla
+- [x] **T25** Luo `scripts/check_project.py` (tarkistaa tulostiedostot, tavoitteet ja palautettavat)
+  - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: valmis
 
 ## Vaihe 2: Mallit (valmis ma 30.11. – to 3.12.)
 
