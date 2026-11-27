@@ -84,6 +84,13 @@ def build_yamnet_cache(df, cache_dir="data/cache", model=None):
 
 POOLINGS = ("mean", "max", "meanmax")
 
+# T10:n valinta mallille C1 (T15 käyttää näitä). Validointivertailussa (5 ajoa, vain
+# validointifoldit) max-pooling oli paras; piilokerros ei parantanut merkitsevästi
+# (max+256 0,910 ± 0,046 vs. max+0 0,903 ± 0,044), joten valittiin yksinkertaisempi
+# lineaarinen luokitin, jolla oli myös pienempi validointihäviö. Ks. notebooks/T10_c1.ipynb.
+C1_POOLING = "max"
+C1_HIDDEN = 0
+
 
 def pool_embeddings(emb, method="meanmax"):
     """Yhdistä kehykset leikkeen tasolle: (n, kehykset, 1024) -> (n, 1024) tai (n, 2048).
