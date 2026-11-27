@@ -7,12 +7,12 @@ Tämä liite on koottu ryhmän jäsenten AI-lokeista (`logs/*.md`) komennolla `p
 | Jäsen | Kirjauksia | Aikaväli |
 | --- | --- | --- |
 | Elias | 2 | 25.11.2026–25.11.2026 |
-| Miska | 12 | 26.11.2026–27.11.2026 |
+| Miska | 13 | 26.11.2026–27.11.2026 |
 | Taif | 0 | – |
 | Veijo | 7 | 24.11.2026–27.11.2026 |
-| **Yhteensä** | **21** | |
+| **Yhteensä** | **22** | |
 
-**Työkalut (kuten lokeihin kirjattu):** Claude (Opus 5.5) (12), Claude Code (9)
+**Työkalut (kuten lokeihin kirjattu):** Claude (Opus 5.5) (13), Claude Code (9)
 
 **Tehtävät, joissa tekoälyä käytettiin:**
 
@@ -49,6 +49,7 @@ Tämä liite on koottu ryhmän jäsenten AI-lokeista (`logs/*.md`) komennolla `p
 | 27.11.2026 | Miska | T09 | Claude (Opus 5.5) | Yhdistä PR #20, Colab-ajo tehty | Miska ajoi `notebooks/T09_yamnet.ipynb`:n Colabissa (`hub.load`) ja ilmoitti sen onnistuneen; Claude ei nähnyt ajon tulostetta. Claude lisäsi tämän rivin, kommentoi PR:ään ja yhdisti PR #20:n Miskan pyynnöstä. |
 | 27.11.2026 | Miska | T22 | Claude (Opus 5.5) | Ehdota T22:n rakenne ja kirjoita koodi | Claude ehdotti rakenteen, ja Miska hyväksyi: koontiskripti `scripts/ai_appendix.py` (vain standardikirjasto, ei muokkaa lokeja), liite tiedostoon `report/liitteet/ai_kaytto.md` (alikansio, jotta `check_project.py` ei pidä liitettä raporttina), jäsenkohtaiset taulukot ja `--check`-tila T24:ää varten. Testattu keksityillä lokeilla: väärä nimi, väärä sarakemäärä, virheellinen päivämäärä, `\|` tekstissä, lopun `\|` puuttuu ja `--check` (0 ajan tasalla, 1 uuden rivin jälkeen). Ensimmäinen versio tulkitsi Veijon lokin rivin, josta puuttui lopun `\|`, väärin; jäsennin korjattiin. Liite generoitu mainin lokeista (19 riviä). |
 | 27.11.2026 | Miska | T22 | Claude (Opus 5.5) | `/valmis`: avaa PR koontiskriptille | Miska päätti, ettei T22:ta merkitä vielä valmiiksi, koska tehtävä on "kirjaa koko ajan, viimeistele raporttiin" (takaraja 9.12.). Claude avasi PR:n skriptille ja liitteen nykyversiolle; T22 jää `työn alla`. Viimeistely (liitteen uudelleengenerointi ja raportin osio) tehdään lähempänä palautusta. |
+| 27.11.2026 | Miska | T22 | Claude (Opus 5.5) | Selitä `scripts/ai_appendix.py` riveittäin ja korjaa päivämääräpuute | Claude selitti skriptin ja huomasi, että rivi, jonka päivämäärä oli väärää muotoa (esim. `1.12.26`, `2026-12-01`), putosi liitteestä hiljaa. Miskan pyynnöstä datariviksi tunnistetaan nyt mikä tahansa `\|`-merkillä alkava rivi paitsi otsikko- ja erotinrivi, jolloin väärä päivämäärä antaa varoituksen ja rivi jää liitteeseen. Testattu: `1.12.26`, `2026-12-01` ja tyhjä päivä varoittavat, `\|:---\|`-erotin ja tavallinen teksti ohitetaan, oikeiden lokien liite ennallaan. |
 
 ## Taif
 

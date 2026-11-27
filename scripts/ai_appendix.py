@@ -22,7 +22,7 @@ MEMBERS = ["Elias", "Miska", "Taif", "Veijo"]
 COLUMNS = ["Päivä", "Kuka", "Tehtävä", "Työkalu", "Mitä pyydettiin", "Mitä käytettiin ja muutettiin"]
 OUTPUT = Path("report") / "liitteet" / "ai_kaytto.md"
 
-ROW_RE = re.compile(r"^\|\s*\d{1,2}\.\d{1,2}\.\d{4}\s*\|")   # taulukkorivi alkaa päivämäärällä
+HEADER_RE = re.compile(r"^\|\s*(Päivä\s*\||:?-{3,})")       # otsikko- tai erotinrivi
 CELL_SPLIT = re.compile(r"(?<!\\)\|")                       # jakaja: | ilman edeltävää \-merkkiä
 TASK_RE = re.compile(r"\bT\d{2}\b")
 
@@ -31,11 +31,13 @@ def parse_log(path, owner, label):
     """Palauta (rivit, varoitukset). Rivi on sanakirja COLUMNS-avaimilla + järjestysnumero.
 
     `label` on varoituksissa näytettävä polku (esim. logs/veijo.md). Rivin lopun |-merkki
-    on Markdownissa valinnainen, joten molemmat muodot hyväksytään.
+    on Markdownissa valinnainen, joten molemmat muodot hyväksytään. Datarivi on mikä tahansa
+    |-merkillä alkava rivi paitsi otsikko- ja erotinrivi, joten väärän muotoinen päivämäärä
+    antaa varoituksen eikä pudota riviä hiljaa.
     """
     rows, warnings = [], []
     for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
-        if not ROW_RE.match(line):
+        if not line.lstrip().startswith("|") or HEADER_RE.match(line.lstrip()):
             continue
         parts = CELL_SPLIT.split(line.strip())[1:]       # ensimmäinen osa on tyhjä (rivin alun |)
         if parts and not parts[-1].strip():
