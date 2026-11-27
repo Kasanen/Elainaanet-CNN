@@ -76,7 +76,7 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
 - [ ] **T21** Raportti (3–5 s): tavoite ja motivaatio, data ja esikäsittely, mallit ja perustelut, koulutus ja hyperparametrit, analyysi, haasteet ja epäonnistumiset, johtopäätökset ja jatkokehitysideat, työnjako
   - vaatii: T18, T19 · takaraja: ke 9.12. · ottaja: – · tila: vapaa
 - [ ] **T22** Tekoälyn käytön dokumentointi (kirjaa koko ajan, viimeistele raporttiin)
-  - vaatii: – · takaraja: ke 9.12. · ottaja: – · tila: vapaa
+  - vaatii: – · takaraja: ke 9.12. · ottaja: Miska · tila: työn alla
 - [ ] **T23** Esitysdiat (10–15 min) ja harjoitusesitys, kaikki puhuvat. Jokainen esittelee vähintään yhden osan, jonka hän on itse toteuttanut
   - vaatii: T18 · takaraja: ke 9.12. · ottaja: – · tila: vapaa
 
