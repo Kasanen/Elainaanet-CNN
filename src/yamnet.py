@@ -72,6 +72,8 @@ def build_yamnet_cache(df, cache_dir="data/cache", model=None):
 
     model = model or load_yamnet()
     x = np.stack([embed(model, load_wave_16k(p)) for p in df["path"]])
+    if x.shape[-1] != EMBED_DIM:   # huomaa, jos malli on vaihtunut
+        raise ValueError(f"upotuksen koko {x.shape[-1]}, odotettiin {EMBED_DIM}")
     cache_dir.mkdir(parents=True, exist_ok=True)
     np.save(x_path, x)
     names_path.write_text("\n".join(names), encoding="utf-8")
