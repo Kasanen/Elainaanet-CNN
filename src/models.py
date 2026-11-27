@@ -3,6 +3,31 @@
 import keras
 
 
+def build_a(input_shape=(128, 431, 1), n_classes=10, filters=(16, 32, 64, 128), dense=64, lr=1e-3):
+    """Malli A (T07): baseline-CNN log-mel-spektrogrammeille.
+
+    len(filters) × [Conv2D(f, 3×3, relu, same) -> MaxPool(2×2)] -> GlobalAveragePooling2D
+    -> Dense(dense, relu) -> Dense(n_classes, softmax).
+    Ei BatchNormia, Dropoutia eikä L2:ta (ne ja augmentaatio ovat mallissa B), jotta A:n ja
+    B:n ero mittaa niiden vaikutusta. GlobalAveragePooling Flattenin sijaan: Flatten antaisi
+    noin 1,7 miljoonaa parametria ensimmäiseen Dense-kerrokseen, kun opetusleikkeitä on 240.
+    Syöte tulee `src.data.fold_arrays`-funktiosta. Käännetty: Adam(lr),
+    sparse_categorical_crossentropy, accuracy.
+    """
+    layers = [keras.Input(input_shape)]
+    for f in filters:
+        layers += [keras.layers.Conv2D(f, 3, padding="same", activation="relu"),
+                   keras.layers.MaxPooling2D(2)]
+    layers += [keras.layers.GlobalAveragePooling2D(),
+               keras.layers.Dense(dense, activation="relu"),
+               keras.layers.Dense(n_classes, activation="softmax")]
+
+    model = keras.Sequential(layers, name="A")
+    model.compile(optimizer=keras.optimizers.Adam(lr),
+                  loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+    return model
+
+
 def build_c1(input_dim, n_classes=10, hidden=256, dropout=0.5, l2=1e-4, lr=1e-3):
     """Malli C1 (T10): pieni luokitin YAMNet-upotusten päälle.
 
