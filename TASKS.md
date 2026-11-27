@@ -39,8 +39,8 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
 
 ## Vaihe 2: Mallit (valmis ma 30.11. – to 3.12.)
 
-- [ ] **T07** Malli A (baseline-CNN), ajo kiinteillä foldeilla
-  - vaatii: T04, T06 · takaraja: ma 30.11. · ottaja: Miska · tila: työn alla
+- [x] **T07** Malli A (baseline-CNN), ajo kiinteillä foldeilla
+  - vaatii: T04, T06 · takaraja: ma 30.11. · ottaja: Miska · tila: valmis
 - [ ] **T08** Malli B (regularisoitu CNN), ensimmäinen ajo
   - vaatii: T05, T06 · takaraja: ma 30.11. · ottaja: – · tila: vapaa
 - [x] **T09** YAMNet-upotukset kaikille leikkeille (16 kHz)
