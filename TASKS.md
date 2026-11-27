@@ -22,8 +22,8 @@ Tavoitteet: baseline (A) ≥ 70 %, paras malli ≥ 85 % tarkkuus ja makro-F1 ≥
 
 Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki käyttävät samaa dataa ja koodia.
 
-- [ ] **T01** Luo uusi GitHub-repo (kaikille neljälle kirjoitusoikeus; `main`in suojaus valinnainen ja ilman pakollista hyväksyntää), kansiorakenne, `requirements.txt`, `.gitignore` (`data/`, `models/`, `*.npy`, `.ipynb_checkpoints`, `__pycache__`) ja jaettu Drive-kansio. Ensimmäisenä commitina `CLAUDE.md`, `PLAN.md`, `TASKS.md`, `README.md` ja `private/`-ohjeet
-  - vaatii: – · takaraja: to 26.11. · ottaja: Elias · tila: työn alla
+- [x] **T01** Luo uusi GitHub-repo (kaikille neljälle kirjoitusoikeus; `main`in suojaus valinnainen ja ilman pakollista hyväksyntää), kansiorakenne, `requirements.txt`, `.gitignore` (`data/`, `models/`, `*.npy`, `.ipynb_checkpoints`, `__pycache__`) ja jaettu Drive-kansio. Ensimmäisenä commitina `CLAUDE.md`, `PLAN.md`, `TASKS.md`, `README.md` ja `private/`-ohjeet
+  - vaatii: – · takaraja: to 26.11. · ottaja: Elias · tila: valmis
 - [x] **T02** Lataa ESC-50, suodata eläinluokat (`target` < 10), tarkista 400 leikettä
   - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: valmis
 - [x] **T03** Fold-jako `split()` (testifoldi + validointifoldi + opetusfoldit, ks. `PLAN.md`) ja EDA (luokkajakauma, esimerkkispektrogrammit)
@@ -32,10 +32,10 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
   - vaatii: T02 · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [ ] **T05** `PyDataset` ja augmentaatiot (aikasiirto, kohina, SpecAugment, mixup)
   - vaatii: T04 · takaraja: to 26.11. · ottaja: – · tila: vapaa
-- [ ] **T06** Yhteinen koulutusfunktio (callbackit) ja tulosten tallennus `results/`-kansioon
-  - vaatii: T01 · takaraja: to 26.11. · ottaja: – · tila: vapaa
-- [ ] **T25** Luo `scripts/check_project.py` (tarkistaa tulostiedostot, tavoitteet ja palautettavat)
-  - vaatii: T01 · takaraja: to 26.11. · ottaja: – · tila: vapaa
+- [x] **T06** Yhteinen koulutusfunktio (callbackit) ja tulosten tallennus `results/`-kansioon
+  - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: valmis
+- [x] **T25** Luo `scripts/check_project.py` (tarkistaa tulostiedostot, tavoitteet ja palautettavat)
+  - vaatii: T01 · takaraja: to 26.11. · ottaja: Miska · tila: valmis
 
 ## Vaihe 2: Mallit (valmis ma 30.11. – to 3.12.)
 

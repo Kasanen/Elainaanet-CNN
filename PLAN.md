@@ -7,7 +7,7 @@ Tämä tiedosto kertoo, milloin projekti on valmis. Tehtävien tila on `TASKS.md
 - Data: ESC-50:n eläinluokat (koira, kukko, sika, lehmä, sammakko, kissa, kana, hyönteiset, lammas, varis), 400 leikettä, viralliset 5 foldia.
 - Kehys: Keras 3 + TensorFlow-backend, Google Colab GPU.
 - Mallit: A, B, C1, C2. Muiden mallien tai datasettien lisääminen vaatii koko ryhmän päätöksen ja merkinnän muutokseen alla.
-- Datajako: testifoldi k on testi. Validointina on yksi kokonainen opetusfoldi (ei satunnaista osuutta, koska ESC-50:n samasta lähteestä tulevat leikkeet ovat samassa foldissa). Loput kaksi foldia ovat opetusta. EarlyStopping, ReduceLROnPlateau ja KerasTuner käyttävät vain validointifoldia, ja testifoldiin ei kosketa viritysvaiheessa.
+- Datajako: testifoldi k on testi. Validointina on yksi kokonainen opetusfoldi (ei satunnaista osuutta, koska ESC-50:n samasta lähteestä tulevat leikkeet ovat samassa foldissa). Loput kolme foldia ovat opetusta (3 × 80 = 240 leikettä). EarlyStopping, ReduceLROnPlateau ja KerasTuner käyttävät vain validointifoldia, ja testifoldiin ei kosketa viritysvaiheessa.
 - Poikkeus C1:lle: YAMNet käyttää 16 kHz:n aaltomuotoa ja omaa esikäsittelyään, joten C1 ei käytä samaa log-mel-esikäsittelyä kuin muut mallit. Fold-jako ja siemen 42 ovat samat. Poikkeus raportoidaan.
 - Git-työnkulku: uusi repo (T01), yksi haara per tehtävä ja pull request, jonka tekijä yhdistää itse. Pakollista katselmointia ei ole, mutta `src/data.py`- ja `src/augment.py`-muutokset katselmoi toinen jäsen. Tehtävän varaus pushataan mainiin ennen työn aloitusta (`TASKS.md`).
 - Varadatasetti (Kaggle Animal Sound Dataset) otetaan käyttöön vain, jos ESC-50:n kanssa ilmenee estävä ongelma.
@@ -55,7 +55,7 @@ Ablaatioajot tallennetaan samalla tavalla nimellä `results/ablation_{asetus}_fo
 - [ ] Notebookit on tallennettu `.ipynb`- ja `.html`-muodossa
 - [ ] Koulutetut mallit tai uudelleenkoulutusohje ovat mukana (`README.md`)
 - [ ] Linkki ESC-50-datasettiin ja lataus-/suodatusohje ovat mukana
-- [ ] Opettaja on hyväksynyt projektisuunnitelman (tehtävänanto: viikko 5), tila kirjattu muutoslokiin
+- [x] Opettaja on hyväksynyt projektisuunnitelman (tehtävänanto: viikko 5), tila kirjattu muutoslokiin
 - [ ] Raportti (3–5 s) sisältää kaikki vaaditut osiot (myös motivaatio, jatkokehitysideat, epäonnistumiset ja opitut asiat sekä työnjako)
 - [ ] Tekoälyn käyttö on dokumentoitu (AI-loki ja raportin liite)
 - [ ] Esitys (10–15 min) on harjoiteltu ja jokainen jäsen puhuu
@@ -111,3 +111,5 @@ Kirjaa tähän kaikki suunnitelmaan tehdyt muutokset (päivä, mitä muuttui, mi
 | 24.11.2026 | Lisätty valmiin määritelmään suunnitelman hyväksyntä ja raportin lisäosiot | Tehtävänanto: hyväksyntä viikolla 5, raportin vaaditut osiot | Ryhmä (pyysi Veijo), toteutti Claude |
 | 24.11.2026 | Uusi repo, haara per tehtävä ja PR toisen jäsenen katselmoinnilla; arvosana 5 -tarkistuslista | Neljän hengen yhteistyö ilman konflikteja ja arviointikohtien seuranta | Veijo valitsi Clauden ehdotuksista. Ryhmän pitää vahvistaa |
 | 24.11.2026 | Pakollinen katselmointi poistettu. PR:n tekijä yhdistää itse, ja vain `src/data.py` ja `src/augment.py` katselmoidaan | Liian paljon kontrollia ja liian vähän vapautta jäsenille, kun aikataulu on tiukka | Veijo ehdotti. Ryhmän pitää vahvistaa |
+| 23.11.2026 | Opettaja hyväksyi projektisuunnitelman suullisesti. Veijo kysyi, ja opettaja sanoi, ettei tarvita suurempaa selitystä tai hyväksyntää | Tehtävänanto vaatii hyväksynnän viikolla 5. Kirjallista vahvistusta ei ole | Veijo (kysyi opettajalta). Ryhmän pitää vahvistaa |
+| 27.11.2026 | Datajaon kuvauksen korjaus: opetukseen jää kolme foldia, ei kaksi (5 − testi − validointi) | Laskuvirhe tekstissä, kun validointifoldi lisättiin | Veijo korjasi tekstin. Ryhmän pitää vahvistaa, ja `split()` (T03) pitää tarkistaa vastaamaan jakoa |
