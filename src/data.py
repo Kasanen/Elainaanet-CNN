@@ -2,7 +2,8 @@
 
 T02: ESC-50:n lataus, eläinluokkien suodatus ja tarkistus (`download_esc50`,
 `load_metadata`, `check_dataset`).
-Tähän tulevat vielä `split(df, k)` (T03) sekä `load_wave`, `log_mel`, välimuisti ja
+T03: fold-jako (`split_folds`, `split`).
+Tähän tulevat vielä `load_wave`, `log_mel`, välimuisti ja
 normalisointi opetusdatan tilastoilla (T04). Muutokset katselmoi toinen jäsen.
 """
 
@@ -112,3 +113,41 @@ def check_dataset(df, check_audio=True):
             assert info.channels == 1, f"{path}: {info.channels} kanavaa"
             assert abs(info.duration - CLIP_SECONDS) < 0.01, f"{path}: {info.duration:.2f} s"
     return True
+
+
+# --- T03: fold-jako -------------------------------------------------------------
+
+def split_folds(k):
+    """Palauta ajon k foldit: (opetusfoldit, validointifoldi, testifoldi).
+
+    Testifoldi on k. Validointifoldi on seuraava foldi kiertäen (k=5 -> 1), joten
+    jokainen foldi on täsmälleen kerran testinä ja kerran validointina. Loput kolme
+    foldia ovat opetusta. Jako on kiinteä eikä riipu satunnaisuudesta.
+    """
+    if k not in range(1, N_FOLDS + 1):
+        raise ValueError(f"k:n pitää olla 1-{N_FOLDS}, saatiin {k}")
+    test_fold = k
+    val_fold = k % N_FOLDS + 1
+    train_folds = [f for f in range(1, N_FOLDS + 1) if f not in (test_fold, val_fold)]
+    return train_folds, val_fold, test_fold
+
+
+def split(df, k):
+    """Jaa data ajolle k viralliseen foldiin perustuen: (train_df, val_df, test_df).
+
+    Kaikki mallit (A, B, C1, C2) käyttävät tätä samaa jakoa. Validointi on yksi
+    kokonainen foldi, ei satunnaista osuutta, koska ESC-50:ssä samasta
+    lähdeäänitteestä leikatut pätkät ovat samassa foldissa. Satunnainen jako
+    vuotaisi samaa äänitettä opetukseen ja validointiin.
+    Testifoldiin (`test_df`) ei kosketa viritysvaiheessa.
+    """
+    train_folds, val_fold, test_fold = split_folds(k)
+    train_df = df[df["fold"].isin(train_folds)].reset_index(drop=True)
+    val_df = df[df["fold"] == val_fold].reset_index(drop=True)
+    test_df = df[df["fold"] == test_fold].reset_index(drop=True)
+
+    # Varmistus: jokainen leike on täsmälleen yhdessä osassa.
+    assert len(train_df) + len(val_df) + len(test_df) == len(df)
+    parts = [set(train_df["filename"]), set(val_df["filename"]), set(test_df["filename"])]
+    assert not (parts[0] & parts[1] or parts[0] & parts[2] or parts[1] & parts[2])
+    return train_df, val_df, test_df
