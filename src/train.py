@@ -73,13 +73,14 @@ def make_callbacks(name, fold, stage=None, models_dir="models",
 
 
 def train_model(model, train_data, val_data, name, fold, epochs=100, batch_size=None,
-                stage=None, extra_callbacks=None, **callback_kwargs):
+                stage=None, extra_callbacks=None, verbose=2, **callback_kwargs):
     """Kouluta valmiiksi käännetty malli. Palauttaa (history, train_seconds).
 
     `train_data` ja `val_data` ovat joko `(x, y)`-pareja (monikko tai lista) tai
     `keras.utils.PyDataset`-olioita. Testidataa tälle funktiolle ei anneta. `stage`
     erottaa saman ajon vaiheiden CSV-lokit (C2: "head" ja "ft").
     `callback_kwargs` (esim. `patience=10`) välitetään `make_callbacks`-funktiolle.
+    `verbose` välitetään `fit`-funktiolle (2 = rivi per epookki, 0 = hiljaa).
     """
     callbacks = make_callbacks(name, fold, stage=stage, **callback_kwargs)
     callbacks += list(extra_callbacks or [])
@@ -94,7 +95,7 @@ def train_model(model, train_data, val_data, name, fold, epochs=100, batch_size=
 
     start = time.perf_counter()
     history = model.fit(**fit_args, validation_data=val_data, epochs=epochs,
-                        callbacks=callbacks, verbose=2)
+                        callbacks=callbacks, verbose=verbose)
     train_seconds = time.perf_counter() - start
     return history, train_seconds
 
