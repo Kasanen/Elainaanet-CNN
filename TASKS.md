@@ -29,7 +29,7 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
 - [x] **T03** Fold-jako `split()` (testifoldi + validointifoldi + opetusfoldit, ks. `PLAN.md`) ja EDA (luokkajakauma, esimerkkispektrogrammit)
   - vaatii: T02 · takaraja: to 26.11. · ottaja: Miska · tila: valmis
 - [ ] **T04** Esikäsittely: `load_wave`, `log_mel`, `.npy`-välimuisti, normalisointi opetusdatan tilastoilla
-  - vaatii: T02 · takaraja: to 26.11. · ottaja: – · tila: vapaa
+  - vaatii: T02 · takaraja: to 26.11. · ottaja: Miska · tila: työn alla
 - [ ] **T05** `PyDataset` ja augmentaatiot (aikasiirto, kohina, SpecAugment, mixup)
   - vaatii: T04 · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [x] **T06** Yhteinen koulutusfunktio (callbackit) ja tulosten tallennus `results/`-kansioon
@@ -43,8 +43,8 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
   - vaatii: T04, T06 · takaraja: ma 30.11. · ottaja: – · tila: vapaa
 - [ ] **T08** Malli B (regularisoitu CNN), ensimmäinen ajo
   - vaatii: T05, T06 · takaraja: ma 30.11. · ottaja: – · tila: vapaa
-- [ ] **T09** YAMNet-upotukset kaikille leikkeille (16 kHz)
-  - vaatii: T02 · takaraja: ma 30.11. · ottaja: – · tila: vapaa
+- [x] **T09** YAMNet-upotukset kaikille leikkeille (16 kHz)
+  - vaatii: T02 · takaraja: ma 30.11. · ottaja: Miska · tila: valmis
 - [ ] **T10** Malli C1: luokitin YAMNet-upotusten päälle
   - vaatii: T06, T09 · takaraja: to 3.12. · ottaja: – · tila: vapaa
 - [ ] **T11** KerasTuner-haku mallille B (10–15 kokeilua)
