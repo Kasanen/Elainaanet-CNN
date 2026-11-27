@@ -55,7 +55,7 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
 ## Vaihe 3: Lopulliset ajot ja analyysi (valmis su 6.12., koodi jäädytetään)
 
 - [ ] **T13** 5-fold-ajot: malli A
-  - vaatii: T07 · takaraja: su 6.12. · ottaja: – · tila: vapaa
+  - vaatii: T07 · takaraja: su 6.12. · ottaja: Miska · tila: työn alla
 - [ ] **T14** 5-fold-ajot: malli B (paras konfiguraatio)
   - vaatii: T11 · takaraja: su 6.12. · ottaja: – · tila: vapaa
 - [ ] **T15** 5-fold-ajot: malli C1
