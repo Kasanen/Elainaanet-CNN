@@ -29,7 +29,7 @@ Näiden pitää olla valmiina ennen kuin muut voivat ajaa malleja, koska kaikki 
 - [ ] **T03** Fold-jako `split()` (testifoldi + validointifoldi + opetusfoldit, ks. `PLAN.md`) ja EDA (luokkajakauma, esimerkkispektrogrammit)
   - vaatii: T02 · takaraja: to 26.11. · ottaja: Miska · tila: työn alla
 - [ ] **T04** Esikäsittely: `load_wave`, `log_mel`, `.npy`-välimuisti, normalisointi opetusdatan tilastoilla
-  - vaatii: T02 · takaraja: to 26.11. · ottaja: – · tila: vapaa
+  - vaatii: T02 · takaraja: to 26.11. · ottaja: Miska · tila: työn alla
 - [ ] **T05** `PyDataset` ja augmentaatiot (aikasiirto, kohina, SpecAugment, mixup)
   - vaatii: T04 · takaraja: to 26.11. · ottaja: – · tila: vapaa
 - [x] **T06** Yhteinen koulutusfunktio (callbackit) ja tulosten tallennus `results/`-kansioon
