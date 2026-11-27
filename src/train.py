@@ -11,6 +11,7 @@ tulokset ovat vertailukelpoisia. Käyttö yhdellä foldilla:
 
 `train_model` ei saa testidataa lainkaan: callbackit seuraavat vain
 validointifoldia (`val_loss`). Testifoldi arvioidaan erikseen `evaluate`-funktiolla.
+Viritysvaiheessa `validate_folds` ajaa kaikki foldit ja arvioi vain validointifoldit.
 """
 
 import json
@@ -139,3 +140,35 @@ def save_results(name, fold, metrics, params, train_seconds, seed=SEED, results_
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(result, indent=2), encoding="utf-8")
     return path
+
+
+def validate_folds(build_fn, fold_data_fn, name, folds=(1, 2, 3, 4, 5), epochs=100,
+                   batch_size=32, **train_kwargs):
+    """Kouluta malli jokaisella ajolla k ja arvioi VAIN validointifoldilla (viritysvaihe).
+
+    `build_fn()` palauttaa uuden käännetyn mallin. `fold_data_fn(k)` palauttaa
+    `((x_tr, y_tr), (x_va, y_va), (x_te, y_te))`, esim. `lambda k: fold_arrays(df, k, cache)`;
+    testiosa heitetään pois eikä sitä arvioida. Tiedostoja ei tallenneta
+    (`save_files=False`). `train_kwargs` (esim. `lr_patience=10`) välitetään
+    `train_model`-funktiolle. Palauttaa pandas-DataFramen, jossa rivi per ajo:
+    epookit, paras epookki, opetustarkkuus parhaalla epookilla, validointitarkkuus ja
+    -häviö (parhaan epookin painoilla, jotka EarlyStopping palauttaa) sekä sekunnit.
+    """
+    import pandas as pd
+
+    rows = []
+    for k in folds:
+        (x_tr, y_tr), (x_va, y_va), _ = fold_data_fn(k)
+        set_seed()
+        model = build_fn()
+        history, secs = train_model(model, (x_tr, y_tr), (x_va, y_va), name, k,
+                                    epochs=epochs, batch_size=batch_size,
+                                    save_files=False, verbose=0, **train_kwargs)
+        h = pd.DataFrame(history.history)
+        best = int(h["val_loss"].idxmin())
+        val_loss, val_acc = model.evaluate(x_va, y_va, verbose=0)
+        rows.append({"fold": k, "epochs": len(h), "best_epoch": best + 1,
+                     "train_acc": float(h.loc[best, "accuracy"]),
+                     "val_acc": float(val_acc), "val_loss": float(val_loss),
+                     "seconds": round(secs, 1)})
+    return pd.DataFrame(rows)
